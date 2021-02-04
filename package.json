@@ -5,10 +5,12 @@
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.1.0",
     "dotenv": "^8.2.0",
-    "express-sessions": "^1.0.6",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
     "handlebars": "^4.7.6",
     "sequelize": "^6.5.0"
   },

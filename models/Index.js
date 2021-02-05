@@ -9,9 +9,6 @@ User.hasMany(Post, {
   foreignKey: 'user_id'
 });
 
-User.hasMany(Recipe, {
-  foreignKey: 'user_id'
-});
 
 Post.belongsTo(User, {
   foreignKey: 'user_id',
@@ -50,10 +47,6 @@ Post.hasMany(Favorite, {
   foreignKey: 'post_id'
 });
 
-Recipe.hasMany(Favorite, {
-  foreignKey: 'recipe_id'
-});
-
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
@@ -71,10 +64,6 @@ User.hasMany(Comment, {
 
 Post.hasMany(Comment, {
   foreignKey: 'post_id'
-});
-
-Recipe.hasMany(Comment, {
-  foreignKey: 'recipe_id'
 });
 
 module.exports = { User, Post, Favorite, Comment };

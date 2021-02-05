@@ -20,28 +20,26 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        include: [
-            {
-              model: Post,
-              attributes: ['id', 'title', 'recipe_id', 'created_at'],
-              through: Recipe, //come back to this one!!!
-              as: 'recipe'
-            },
-            {
-              model: Comment,
-              attributes: ['id', 'comment_text', 'created_at'],
-              include: {
-                model: Post,
-                attributes: ['title']
-              }
-            },
-            {
-              model: Post,
-              attributes: ['title'],
-              through: Favorite,
-              as: 'favorite_posts'
-            }
-          ]
+        // include: [
+        //     {
+        //       model: Post,
+        //       attributes: ['id', 'title', 'recipe_url', 'post_text', 'ingredients_text', 'created_at'],
+        //     },
+        //     {
+        //       model: Comment,
+        //       attributes: ['id', 'comment_text', 'created_at'],
+        //       include: {
+        //         model: Post,
+        //         attributes: ['title']
+        //       }
+        //     },
+        //     {
+        //       model: Post,
+        //       attributes: ['title'],
+        //       through: Favorite,
+        //       as: 'favorite_posts'
+        //     }
+        //   ]
         
     })
     .then(dbUserData => {

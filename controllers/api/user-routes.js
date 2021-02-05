@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { User, Post, Vote, Comment } = require('../../models');
+const { User, Post, Favorite, Comment, Recipe } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
-    //access our User model and run .findAll() method
     User.findAll({
         attributes: { exclude: ['password'] }
     })
@@ -24,9 +23,10 @@ router.get('/:id', (req, res) => {
         include: [
             {
               model: Post,
-              attributes: ['id', 'title', 'post_url', 'created_at']
+              attributes: ['id', 'title', 'recipe_id', 'created_at'],
+              through: Recipe, //come back to this one!!!
+              as: 'recipe'
             },
-            // include the Comment model here:
             {
               model: Comment,
               attributes: ['id', 'comment_text', 'created_at'],
@@ -38,8 +38,8 @@ router.get('/:id', (req, res) => {
             {
               model: Post,
               attributes: ['title'],
-              through: Vote,
-              as: 'voted_posts'
+              through: Favorite,
+              as: 'favorite_posts'
             }
           ]
         
@@ -59,7 +59,6 @@ router.get('/:id', (req, res) => {
 
 // POST /api/users
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -77,7 +76,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    // expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
         where: {
             email: req.body.email

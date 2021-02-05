@@ -1,43 +1,47 @@
-// Loads express module
+const path = require('path');
+
 const express = require('express');
-// Creates our express server
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
+
+const helpers = require('./utils/helpers');
+
 const app = express();
-const port = 3001;
-// const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
-// Loads express and handlebars module
+// set up handlebars
 const exphbs = require('express-handlebars');
+const hbs = exphbs.create({ helpers });
 
-// Sets handlebars configs
-app.engine('handlebars', handlebars({
-    layoutsDir:__dirname + '/views/layouts',
-}));
+const session = require('express-session');
 
-// Serves static files
-app.use(express.static('public'))
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-app.get('/', (req,res) => {
-    res.render('main', {layout : 'main'});
-})
+const sess = {
+  secret: 'Chefs secret recipe',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Serves static files
-app.use(express.static('public'))
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended:true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req,res) => 
-    res.send('Hello World'));
+//turn on routes
+app.use(routes);
+
+//turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now Listening for Server'));
+});
 
 
-
-
-
-
-    app.listen(port, () =>
-    console.log(`App listening to port ${port}`));
-
-    // sequelize.sync({ force: false }).then(() => {
-    //     app.listen(PORT, () => console.log('Now listening'));
-    //   });

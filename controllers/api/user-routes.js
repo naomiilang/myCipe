@@ -1,5 +1,4 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const { User, Post, Favorite, Comment, Recipe } = require('../../models');
 
 // GET /api/users
@@ -156,9 +155,6 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-=======
-const { User } = require('../../models');
->>>>>>> aedd7df776c81d1ed4f53249e8b6cff40b4866eb
 
 
 module.exports = router;

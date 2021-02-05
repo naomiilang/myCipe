@@ -9,16 +9,15 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-<<<<<<< HEAD
     "express-session": "^1.17.1",
-=======
->>>>>>> aedd7df776c81d1ed4f53249e8b6cff40b4866eb
     "express-sessions": "^1.0.6",
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

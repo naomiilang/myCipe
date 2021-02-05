@@ -15,11 +15,32 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      post_url: {
+      recipe_url: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           isURL: true
+        }
+      },
+      post_text: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+        validate: {
+            len: [1]
+        }
+      },
+      ingredients_text: {
+        type: DataTypes.TEXT('tiny'),
+        allowNull: true,
+        validate: {
+            len: [1]
+        }
+      },
+      directions_text: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+        validate: {
+            len: [1]
         }
       },
       user_id: {

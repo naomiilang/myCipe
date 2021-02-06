@@ -4,25 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chef</title>
-  <link rel="stylesheet" href="/public/stylesheets/style.css">
+  <title>cipe</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-<div class="wrapper">
+  <div class="wrapper">
+    <header>
+      <h1 class="gradient-text">cipe</h1>
+      <nav>
+        {{!-- {{#ifloggedIn}}
+        <a href="/dashboard">dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+         {{else}}
+        <a href="/login">login</a>
+        {{/if}} --}}
+      </nav>
+    </header>
 
-<input type="image" src="https://i.imgur.com/A6GVjta.png" name="saveForm" class="btTxt submit" id="saveForm"/>
-{{!-- <img class="icon" src="https://i.imgur.com/A6GVjta.png"/>
-<button type="submit" class="button" style="color: blue;">Welcome</button> --}}
+    <section class="icon">
+      {{!-- <input type="image" src="https://i.imgur.com/A6GVjta.png" class="btTxt submit"/> --}}
+    <img class="icon-pic" src="https://i.imgur.com/A6GVjta.png"/>
+    </section>
+    <section class="buttons">
+    <button type="submit" class="button" style="color: rgb(151, 151, 161);">Log In</button>
+    <button type="submit" class="button" style="color: rgb(151, 151, 161);">Contiue as Guest</button>
+    <button type="submit" class="button" style="color: rgb(151, 151, 161)">Sign Up</button>
+    </section>
 
+    </section>  
+  </div>
 
-<main>
+  <main>
     {{{ body }}}
-</main>
+  </main>
 
-<footer>
-    <h4 style="color: rgb(102, 102, 109);">WE THANK YOU</h4>
-</footer>
+  <footer>
+     <h4>WE THANK YOU</h4>
+  </footer>
 </body>
 
 </html> 

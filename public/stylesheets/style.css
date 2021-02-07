@@ -6,9 +6,16 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
 
 .gradient-text{
     font-size: 72px;
-    background: -webkit-linear-gradient(rgb(235, 181, 94), rgb(121, 83, 34));
+    font-weight: 600;
+    background: -webkit-linear-gradient(#9ae2e2,#020303);
+    text-decoration: underline #5DB8B9;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  h1 span{
+      font-weight: 200;
+     font-family:monospace;
   }
 
 .icon{
@@ -21,11 +28,14 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
 .icon-pic{
     display: flex;
     justify-content: center;
+    padding: 5px;
+    
 }
 
 .buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5px;
 }
 .button:hover {
     background-color: #b0e9e9; /* Green */
@@ -33,7 +43,9 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
 }
 
 h4{
-    color:#996E32;
+    font-size: 16px;
+    font-family: monospace;
+    color:#5cb8b9;
     display: flex;
     justify-content: center;
 }

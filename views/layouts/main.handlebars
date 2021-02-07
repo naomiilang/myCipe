@@ -4,27 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cipe</title>
+  <title>mycipe</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <h1 class="gradient-text">cipe</h1>
-      <nav>
-        {{!-- {{#ifloggedIn}}
+      <h1 class="gradient-text">my<span>cipe</span></h1>
+      {{!-- <nav>
+        {{#ifloggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
          {{else}}
         <a href="/login">login</a>
-        {{/if}} --}}
-      </nav>
+        {{/if}}
+      </nav> --}}
     </header>
 
     <section class="icon">
       {{!-- <input type="image" src="https://i.imgur.com/A6GVjta.png" class="btTxt submit"/> --}}
-    <img class="icon-pic" src="https://i.imgur.com/ysXSZsF.png"/>
+    <img class="icon-pic" src="https://i.imgur.com/UhQk31V.png"/>
     </section>
     <section class="buttons">
     <button type="submit" class="button" style="color: #996E32;">Log In</button>
@@ -32,14 +32,21 @@
     <button type="submit" class="button" style="color: #996E32;">Sign Up</button>
     </section>
 
-
+<section>
   <main>
     {{{ body }}}
   </main>
+</section>
 
-  <footer>
+
+  {{!-- <footer class="footer">
+     <h4>WE &hearts; YOU &hearts; COOKING</h4>
+  </footer> --}}
+
+</body>
+
+  <footer class="footer">
      <h4>WE &hearts; YOU &hearts; COOKING</h4>
   </footer>
-</body>
 
 </html> 

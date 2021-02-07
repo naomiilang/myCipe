@@ -1,5 +1,5 @@
 const seedUsers = require('./user-seeds');
-const seedPosts = require('./post-seeds');
+const seedRecipe = require('./recipe-seeds');
 const seedComments = require('./comment-seeds');
 
 
@@ -20,4 +20,4 @@ const seedAll = async () => {
   process.exit(0);
 };
 
-seedAll();
+seedAll()

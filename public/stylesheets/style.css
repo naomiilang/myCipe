@@ -1,13 +1,12 @@
 body{
-    background: hsla(309, 6%, 41%, 1);
-
-background: linear-gradient(90deg, rgb(172, 172, 172) 0%, rgb(204, 207, 235) 100%);
+    background: rgb(100,92,106);
+background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50%, rgba(100,92,106,1) 100%);
 
 }
 
 .gradient-text{
     font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
+    background: -webkit-linear-gradient(rgb(235, 181, 94), rgb(121, 83, 34));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -28,9 +27,13 @@ background: linear-gradient(90deg, rgb(172, 172, 172) 0%, rgb(204, 207, 235) 100
     display: flex;
     justify-content: space-between;
 }
+.button:hover {
+    background-color: #b0e9e9; /* Green */
+    color: white;
+}
 
 h4{
-    color: rgb(105, 105, 105);
+    color:#996E32;
     display: flex;
     justify-content: center;
 }

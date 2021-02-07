@@ -1,0 +1,51 @@
+body{
+    background: rgb(100,92,106);
+background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50%, rgba(100,92,106,1) 100%);
+
+}
+
+.gradient-text{
+    font-size: 72px;
+    font-weight: 600;
+    background: -webkit-linear-gradient(#9ae2e2,#020303);
+    text-decoration: underline #5DB8B9;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 span{
+      font-weight: 200;
+     font-family:monospace;
+  }
+
+.icon{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.icon-pic{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.button:hover {
+    background-color: #b0e9e9; /* Green */
+    color: white;
+}
+
+h4{
+    font-size: 16px;
+    font-family: monospace;
+    color:#5cb8b9;
+    display: flex;
+    justify-content: center;
+}

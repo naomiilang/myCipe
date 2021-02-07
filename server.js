@@ -4,14 +4,17 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // set up handlebars
-// const exphbs = require('express-handlebars');
-// const hbs = exphbs.create({ helpers });
+const exphbs = require('express-handlebars');
+// const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
+
+app.use(express.static('images'));
 
 const session = require('express-session');
 
@@ -29,8 +32,8 @@ const sess = {
 
 app.use(session(sess));
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));

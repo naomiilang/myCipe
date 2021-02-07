@@ -1,0 +1,33 @@
+<!-- Navigation bar -->
+<nav class= "nav has-shadow">
+    <!-- Left side of nav has logo and displays CHEF name -->
+        <sectiom class="nav-left">
+         <a class="nav-icon">
+            <img src="https://i.imgur.com/A6GVjta.png" alt="chef-hat-icon">
+         </a>
+         <h2 class="chef-name">Chef {{{ name }}} </h2>
+    </section>
+    <!-- Right side of nav has the actions a user can do plus a log-out button -->
+    <section class="nav-right">
+        <ul>
+            <li>My Recipes</li>
+            <li>Post Recipes</li>
+            <li>Favorite Recipes</li>
+            <li>View All Recipes</li>
+        </ul>
+        <button class="log-out">Log Out</button>
+    </section>
+</nav>
+
+<section>
+    <h2>Post Recipe</h2>
+    <form class="post-recipe">
+        <div>
+            <label for="post-recipe">Recipe</label>
+            <input type="text" id="post-recipe" name="post-recipe" />
+        </div>
+    </form>
+
+</section>
+
+<script src="/public/javascript/add-recipe.js"></script>

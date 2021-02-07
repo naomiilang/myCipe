@@ -6,7 +6,8 @@ const Comment = require('./Comment');
 
 // create associations
 User.hasMany(Recipe, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+
 });
 
 Recipe.belongsTo(User, {

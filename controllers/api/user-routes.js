@@ -33,12 +33,12 @@ router.get('/:id', (req, res) => {
             //     attributes: ['title']
             //   }
             // },
-            // {
-            //   model: Recipe,
-            //   attributes: ['title'],
-            //   through: Favorite,
-            //   as: 'favorited_Recipes'
-            // }
+            {
+              model: Recipe,
+              attributes: ['title'],
+              through: Favorite,
+              as: 'favorited_recipes'
+            }
           ]
         
     })

@@ -17,4 +17,4 @@ const recipeData = [
 
 const seedRecipes = () => Recipe.bulkCreate(recipeData);
 
-module.exports = seedPosts;
+module.exports = seedRecipes;

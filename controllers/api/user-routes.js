@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Favorite, Comment, Recipe } = require('../../models');
+const { User, Recipe, Favorite, Comment } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
@@ -20,26 +20,26 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        // include: [
-        //     {
-        //       model: Post,
-        //       attributes: ['id', 'title', 'recipe_url', 'post_text', 'ingredients_text', 'created_at'],
-        //     },
-        //     {
-        //       model: Comment,
-        //       attributes: ['id', 'comment_text', 'created_at'],
-        //       include: {
-        //         model: Post,
-        //         attributes: ['title']
-        //       }
-        //     },
-        //     {
-        //       model: Post,
-        //       attributes: ['title'],
-        //       through: Favorite,
-        //       as: 'favorite_posts'
-        //     }
-        //   ]
+        include: [
+            {
+              model: Recipe,
+              attributes: ['id', 'title', 'created_at'],
+            },
+            // {
+            //   model: Comment,
+            //   attributes: ['id', 'comment_text', 'created_at'],
+            //   include: {
+            //     model: Recipe,
+            //     attributes: ['title']
+            //   }
+            // },
+            // {
+            //   model: Recipe,
+            //   attributes: ['title'],
+            //   through: Favorite,
+            //   as: 'favorited_Recipes'
+            // }
+          ]
         
     })
     .then(dbUserData => {
@@ -111,9 +111,7 @@ router.post('/logout', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
         individualHooks: true,
         where: {

@@ -1,13 +1,39 @@
-{{#if posts.length}}
-<section>
-  <h2>Your Recipes</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-recipe">Edit Recipe</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+<style>
+  body{
+    background: white;
+  }
+</style>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#B0DDEC; color: darkslategray;">
+    <ul class="nav justify-content-end font-monospace">
+      <li class="nav-item">
+        <a class="nav-link" href="/dash">MyCipe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/create">Create</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/my">My Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    </br>
+    <div class="row justify-content-center font-monospace border border-dark"
+      style="background-color: #B0ECE3; font-size: 25px">
+      {{!-- {{{ user }}} --}} User
+    </div>
+  </div>
+
+  <div class="container justify-content-center">
+    </br>
+    <div class="row font-monospace" style="text-align:center">
+      <div class="col-sm-3" style="background-color: #B0ECE3;">title</div>
+      <div class="col-sm-9" style="background-color: #B0DDEC; font-size:smaller"> recipe text </div>
+    </div>
+  </div>

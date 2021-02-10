@@ -12,10 +12,15 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('signup');
   });
-// router.get('/', (req, res) => {
-//     res.render('homepage');
-//   });
-
+router.get('/dash', (req, res) => {
+    res.render('dashhome');
+  });
+  router.get('/my', (req, res) => {
+    res.render('myrecipes');
+  });
+  router.get('/create', (req, res) => {
+    res.render('createrecipe');
+  });
 //   router.get('/login', (req, res) =>{
 
 //   })

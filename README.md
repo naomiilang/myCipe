@@ -11,4 +11,4 @@ Logout will logout USER.<br>
 
 
 
-<img src="https://i.imgur.com/UhQk31V.png">
+<img src="https://i.imgur.com/NVafCZs.png">

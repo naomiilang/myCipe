@@ -1,15 +1,17 @@
+/*  Background styling of page  */
 body{
     background: rgb(100,92,106);
 background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50%, rgba(100,92,106,1) 100%);
 
 }
 
+/*  mycipe font */
 .gradient-text{
     font-size: 72px;
     font-weight: 600;
     background: -webkit-linear-gradient(#9ae2e2,#020303);
     text-decoration: underline #5DB8B9;
-    -webkit-background-clip: text;
+    -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -18,6 +20,7 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
      font-family:monospace;
   }
 
+  /*  mycipe Icon */
 .icon{
     display: flex;
     justify-content: center;
@@ -32,6 +35,8 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
     
 }
 
+
+/*  Sign in - continue as guest - sign up- buttons */
 .buttons{
     display: flex;
     justify-content: center;
@@ -42,6 +47,8 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
     color: white;
 }
 
+
+/*  footer */
 h4{
     font-size: 16px;
     font-family: monospace;

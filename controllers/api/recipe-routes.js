@@ -2,16 +2,20 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Recipe, User, Comment, Favorite } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 // get all users
 router.get('/', (req, res) => {
   console.log('======================');
   Recipe.findAll({
     attributes: [
       'id',
-      'recipe_url',
       'title',
+      'recipe_url',
+      'recipe_text',
+      'ingredients_text',
+      'directions_text',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE recipe.id = favorite.recipe_id)'), 'favorite_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM favorite WHERE recipe.id = favorite.recipe_id)'), 'favorite_count']
     ],
     include: [
       {
@@ -34,6 +38,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.get('/:id', (req, res) => {
   Recipe.findOne({
     where: {
@@ -41,10 +46,13 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'recipe_url',
       'title',
+      'recipe_url',
+      'recipe_text',
+      'ingredients_text',
+      'directions_text',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE recipe.id = favorite.recipe_id)'), 'favorite_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM favorite WHERE recipe.id = favorite.recipe_id)'), 'favorite_count']
     ],
     include: [
       {
@@ -73,12 +81,16 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', Recipe_url: 'https://taskmaster.com/press', user_id: 1}
   Recipe.create({
     title: req.body.title,
     recipe_url: req.body.recipe_url,
-    user_id: req.session.user_id
+    recipe_text: req.body.recipe_text,
+    ingredients_text: req.body.ingredients_text,
+    directions_text: req.body.directions_text,
+    user_id: req.session.user_id,
   })
     .then(dbRecipeData => res.json(dbRecipeData))
     .catch(err => {
@@ -86,8 +98,9 @@ router.post('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.put('/upvote', withAuth, (req, res) => {
-  // custom static method created in models/Post.js
+  // custom static method created in models/Recipe.js
   Recipe.upvote({ ...req.body, user_id: req.session.user_id }, { Favorite, Comment, User })
     .then(updatedFavoriteData => res.json(updatedFavoriteData))
     .catch(err => {
@@ -95,6 +108,7 @@ router.put('/upvote', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.put('/:id', withAuth, (req, res) => {
   Recipe.update(
     {
@@ -118,6 +132,7 @@ router.put('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Recipe.destroy({
@@ -137,4 +152,5 @@ router.delete('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
 module.exports = router;

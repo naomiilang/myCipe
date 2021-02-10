@@ -1,7 +1,40 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Recipe extends Model {}
+class Recipe extends Model {
+  static upvote(body, models) {
+    return models.Favorite.create({
+      user_id: body.user_id,
+      recipe_id: body.recipe_id
+    }).then(() => {
+      return Recipe.findOne({
+        where: {
+          id: body.recipe_id
+        },
+        attributes: [
+          'id',
+          'title',
+          'recipe_url',
+          'recipe_text',
+          'ingredients_text',
+          'directions_text',
+          'created_at',
+          [sequelize.literal('(SELECT COUNT(*) FROM favorite WHERE recipe.id = favorite.recipe_id)'), 'favorite_count']
+        ],
+        include: [
+          {
+            model: models.Comment,
+            attributes: ['id', 'comment_text', 'recipe_id', 'user_id', 'created_at'],
+            include: {
+              model: models.User,
+              attributes: ['username']
+            }
+          }
+        ]
+      });
+    });
+  }
+}
 
 Recipe.init(
     {
@@ -23,7 +56,7 @@ Recipe.init(
         }
       },
       recipe_text: {
-        type: DataTypes.TEXT,
+        type: DataTypes.TEXT('tiny'),
         allowNull: true,
         validate: {
             len: [1]

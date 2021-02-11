@@ -1,14 +1,15 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="recipe-title"]').value;
-    // const post_Recipe = document.querySelector('input[name="post-url"]').value;
-  
+    const title = document.querySelector('input[name="title"]').value;
+    const recipe_text = document.querySelector('textarea[name="recipe_text"]').value;
+    const ingredients_text = document.querySelector('textarea[name="ingredients_text"]').value;
+    const directions_text = document.querySelector('textarea[name="directions_text"]').value;
+
     const response = await fetch(`/api/recipes`, {
       method: 'POST',
       body: JSON.stringify({
         title,
-        recipe_url,
         recipe_text,
         ingredients_text,
         directions_text
@@ -19,7 +20,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/dash');
     } else {
       alert(response.statusText);
     }

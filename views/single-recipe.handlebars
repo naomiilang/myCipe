@@ -55,9 +55,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/dash">MyCipe</a>
             </li>
+            {{#if loggedIn}}
             <li class="nav-item">
                 <a class="nav-link" href="/create">Create</a>
             </li>
+            {{/if}}
             <li class="nav-item">
                 <a class="nav-link" href="/my">My Recipes</a>
             </li>
@@ -83,8 +85,8 @@
                     {{ recipe.title }}
                 </div>
                 <div class="row">
-                    <div class="col-sm-3">Created by Chef: {{ user.username }}</div>
-                <div class="col-sm-9">on {{ recipe.created_at }}</div>
+                    <div class="col-sm-2">Created by Chef {{ recipe.user.username }}</div>
+                <div class="col-sm-10">on {{ format_date recipe.created_at }}</div>
                 </div>
         </div>
         <div class="container justify-content-center">
@@ -114,7 +116,7 @@
                 {{#each recipe.comments}}
                 <section class="comment">
                     <div class="meta">
-                    {{user.username}} on {{created_at}}
+                    {{user.username}} on {{format_date created_at}}
                     </div>
                     <div class="text">
                     {{comment_text}}

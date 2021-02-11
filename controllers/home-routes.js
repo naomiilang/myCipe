@@ -6,6 +6,12 @@ const { Recipe, User, Favorite, Comment } = require('../models');
 router.get('/', (req, res) => {
   res.render('homepage');
 });
+router.get('/create', (req, res) => {
+  res.render('createrecipe', {
+    loggedIn: req.session.loggedIn
+  }
+  );
+});
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/dash');
@@ -22,14 +28,14 @@ router.get('/dash', (req, res) => {
       'id',
       'title',
       'recipe_text',
-      'user_id'
+      // 'user_id'
     ],
-    // include: [
-    //   {
-    //     model: User,
-    //     attributes: [username]
-    //   }
-    // ]
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   }).then((dbRecipeData) => {
     const recipes = dbRecipeData.map(recipe => recipe.get({ plain:true }));
       res.render('dashhome', {

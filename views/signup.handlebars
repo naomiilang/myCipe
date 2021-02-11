@@ -4,15 +4,17 @@
   }
 </style>
 <!--  Container with logo, email, password, choose chef name, login button  -->
-    <form class="signup-form" action="./" method="POST">
+    <form class="signup-form" action="/dash" method="POST">
           <div class="signup-form-logo-container">
             <img  class="signup-form-logo" src="https://i.imgur.com/UhQk31V.png" alt="chef-hat-logo"/>
           </div>
           <div class="signup-form-content">
             <h3 class="signup-form-header">Welcome to mycipe!  Please use a valid email address.  Choose a password.  Choose a ChefName!</h3>
-              <input class="signup-form-input" type="text" name="email" placeholder="Email address" />
-              <input class="signup-form-input" type="text" name="chefname" placeholder="Please choose a Chef name" />
-              <input class="signup-form-input" type="password" name="userpassword"id="password-login" placeholder="Password"/>
+              <input class="signup-form-input" type="text" name="username" id="username-signup" placeholder="Please choose a Chef name" />
+              <input class="signup-form-input" type="text" name="email" id="email-signup" placeholder="Email address" />
+              <input class="signup-form-input" type="password" name="password" id="password-signup" placeholder="Password"/>
               <button class="signup-form-button" type="submit">ENTER</button>
           </div>
     </form>
+
+<script src="/javascript/signup.js"></script>

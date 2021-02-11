@@ -16,7 +16,7 @@
                 <a class="nav-link" href="/my">My Recipes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">Logout</a>
+                <a class="nav-link" id="logout" href="/">Logout</a>
             </li>
         </ul>
     </nav>
@@ -30,10 +30,8 @@
     <div class="container justify-content-center">
         </br>
         <div class="row font-monospace" style="text-align:center">
-            <div class="col-sm-2" style="background-color: #B0ECE3;">Making Spaghetti</div>
-            <div class="col-sm-7" style="background-color: #B0DDEC; font-size:smaller">Lorem ipsum dolor sit, amet
-                consectetur adipisicing elit. Eos fugit perferendis tempora repellat corporis! Fugit sed maiores vero
-                nulla laudantium at ullam ducimus, deserunt.</div>
+            <div class="col-sm-2" style="background-color: #B0ECE3;">{{ title }}</div>
+            <div class="col-sm-7" style="background-color: #B0DDEC; font-size:smaller">{{ recipe_text }}</div>
             <div class="col-sm-3" style="background-color: #B0ECE3;">Chef: {{{ name }}}</div>
         </div>
     </div>

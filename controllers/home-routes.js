@@ -4,23 +4,26 @@ const { Recipe, User, Favorite, Comment } = require('../models');
 
 
 router.get('/', (req, res) => {
-    res.render('homepage');
-  });
+  res.render('homepage');
+});
 router.get('/login', (req, res) => {
-    res.render('login');
-  });
+  res.render('login');
+});
 router.get('/signup', (req, res) => {
-    res.render('signup');
-  });
+  res.render('signup');
+});
 router.get('/dash', (req, res) => {
-    res.render('dashhome');
-  });
-  router.get('/my', (req, res) => {
-    res.render('myrecipes');
-  });
-  router.get('/create', (req, res) => {
-    res.render('createrecipe');
-  });
+  Recipe.findAll({}).then((recipeData) => {
+    console.log(recipeData);
+    res.render('dashhome')
+  })
+});
+router.get('/my', (req, res) => {
+  res.render('myrecipes');
+});
+router.get('/create', (req, res) => {
+  res.render('createrecipe');
+});
 //   router.get('/login', (req, res) =>{
 
 //   })

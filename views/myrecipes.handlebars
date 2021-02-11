@@ -1,10 +1,10 @@
-{{#if posts.length}}
+{{#if recipe.length}}
 <section>
   <h2>Your Recipes</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each recipe as |recipe|}}
     <li>
-      {{> post-info post}}
+      {{> recipe-info recipe}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-recipe">Edit Recipe</a>
     </li>
     {{/each}}

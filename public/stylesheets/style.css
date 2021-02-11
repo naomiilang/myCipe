@@ -20,14 +20,14 @@ background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50
      font-family:monospace;
   }
 
-  /*  mycipe Icon */
+  /*  mycipe container  */
 .icon{
     display: flex;
     justify-content: center;
 }
 
 
-
+/*  mycipe Icon */
 .icon-pic{
     display: flex;
     justify-content: center;
@@ -57,16 +57,9 @@ h4{
     display: flex;
     justify-content: center;
 }
+ 
 
-/* 
-body{
-    /* background: #5DB8B9; */
-    /* background: rgb(100,92,106);
-    background: linear-gradient(90deg, rgba(100,92,106,1) 0%, rgba(232,230,220,1) 50%, rgba(100,92,106,1) 100%); */
-    /* margin: 15px;
-    margin-top: 150px; */
-/* } */ 
-
+/*  Login form  */
 .login-form,
 .login-form * {
     box-sizing: border-box;
@@ -81,10 +74,11 @@ body{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-.login-form-logo-container{
+/* .login-form-logo-container{
 
-}
+} */
 
+/*  mycipe logo */
 .login-form-logo{
     display: block;
     max-width: 125px;
@@ -143,11 +137,9 @@ body{
     color:#000000;
 }
 
-.blue {
-    background-color:#5DB8B9 ;
-}
 
 
+/*  Sign Up form */
 .signup-form,
 .signup-form * {
     box-sizing: border-box;
@@ -219,4 +211,62 @@ body{
 
 .signup-form-button:hover{
     color:#000000;
+}
+
+/* Recipe card  */
+
+
+.title h1{
+    color: rgb(97, 95, 95);
+}
+
+.recipe-card{
+    width: 100%;
+    background: #4b4d4d;
+    box-shadow: 0 0 15px rgba(27, 48, 47, 0.15);
+    margin: 5px 2px;
+    
+}
+
+.recipe-card h2{
+    color: #5DB8B9;
+    border-bottom: rgb(0, 0, 0) solid;
+    font-family: monospace;
+    font-size: 40px;
+}
+.recipe-card #recipe-name {
+    color: rgb(41, 43, 43);
+    font-family: monospace;
+    margin-top: 15px;
+}
+
+.ingredient-list {
+    color: rgb(101, 105, 105);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+.recipe-card h4{
+    color:#5DB8B9;
+    font-size: 20px;
+    font-family: monospace;
+    border-bottom:black solid;
+}
+.recipe-card .ingredient-list{
+    color: rgb(41, 43, 43);
+    font-family: monospace;
+    
+}
+
+.recipe-card .directions{
+    color:rgb(41, 43, 43);
+    font-family: monospace;
+}
+
+.recipe-card #directions{
+    color: rgb(41, 43, 43);
+    font-family: monospace;
+}
+
+.recipe-card #ingredient-list {
+    color: rgb(41, 43, 43);
+    font-family: monospace;
 }

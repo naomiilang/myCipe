@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3001;
 
 // set up handlebars
 const exphbs = require('express-handlebars');
-// const hbs = exphbs.create({});
 const hbs = exphbs.create({ helpers });
 
 app.use(express.static('images'));

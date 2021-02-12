@@ -1,24 +1,25 @@
 
 <style>
-  body{
-    background: white;
-  }
+    body{
+        background: white;
+    }
+    .comment {
+    padding: 1%;
+    margin-bottom: 1%;
+    }
+
+    .comment:nth-child(odd) {
+    background-color: #b8d8fd;
+    }
+
+    .comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+    }
 </style>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#B0DDEC; color: darkslategray;">
-        <ul class="nav justify-content-end font-monospace">
-            <li class="nav-item">
-                <a class="nav-link" href="/dash">MyCipe</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/create">Create</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/my">My Recipes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">Logout</a>
-            </li>
-        </ul>
+        {{> nav}}  
     </nav>
     <div class="container">
         </br>
@@ -29,12 +30,17 @@
     </div>
     <div class="container justify-content-center">
         </br>
+        {{#each recipes as |recipe|}}
         <div class="row font-monospace" style="text-align:center">
-            <div class="col-sm-2" style="background-color: #B0ECE3;">{{ title }}</div>
+            <div class="col-sm-2" style="background-color: #B0ECE3;">
+                <a href="/recipe/{{ id }}">{{ title }}</a>
+            </div>
             <div class="col-sm-7" style="background-color: #B0DDEC; font-size:smaller">{{ recipe_text }}</div>
-            <div class="col-sm-3" style="background-color: #B0ECE3;">Chef: {{{ name }}}</div>
+            <div class="col-sm-3" style="background-color: #B0ECE3;">Chef: {{ user.username }}</div>
         </div>
+        </br>
+        {{/each}}
     </div>
     
-<script src="./javascript/add-recipe.js"></script>
+{{!-- <script src="./javascript/add-recipe.js"></script> --}}
 

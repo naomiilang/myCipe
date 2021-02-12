@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dash');
+        document.location.replace('/my');
       } else {
         alert(response.statusText);
       }

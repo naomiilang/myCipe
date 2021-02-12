@@ -17,6 +17,9 @@
     margin-bottom: .5%;
     opacity: .6;
     }
+    .pic {
+        max-height: 30px;
+    }
 </style>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#B0DDEC; color: darkslategray;">
       {{> nav}}  
@@ -47,9 +50,42 @@
             <div class="col-sm-12" style="background-color: #B0DDEC; font-size:medium"><a href="/create">Add Your Recipes Here</a></div>
         </div>
         {{/if}}
+        </br>
+        </br>
+        <div class="row font-monospace" style="text-align:center">
+            <div class="col-sm-12" style="background-color: #B0ECE3; font-size: 25px">
+                {{!-- <button id="recipeBtn">Click for Tonight's Cocktail!</button> --}}
+                Tonight's Suggested Cocktail
+            </div>
+        </div>
+        </br>
+        <div class="row font-monospace" style="text-align:center">
+            <div class="col-sm-12" style="background-color: #94cfff; font-size:medium; font-weight:bold;">
+                <div id="drinkTitle"></div>
+            </div>
+        </div>
+        <div class="row font-monospace" style="text-align:center">
+            <div class="col-sm-4" style="background-color: #B0ECE3; font-size:smaller">
+                <img src="" class="is-border-primary" height="400px" id="pic" />
+            </div>
+            <div class="col-sm-3" style="background-color: #B0DDEC; font-size:smaller">
+                <div id="drinkIngredient1"></div>
+                <div id="drinkIngredient2"></div>
+                <div id="drinkIngredient3"></div>
+                <div id="drinkIngredient4"></div>
+                <div id="drinkIngredient5"></div>
+                <div id="drinkIngredient6"></div>
+                <div id="drinkIngredient7"></div>
+                <div id="drinkIngredient8"></div>
+                <div id="drinkIngredient9"></div>
+                <div id="drinkIngredient10"></div>
+            </div>
+            <div class="col-sm-5" style="background-color: #B0ECE3;">
+                <div id="drinkDescription"></div>
+            </div>
+        </div>
     </div>
 
-  
-    
-{{!-- <script src="./javascript/add-recipe.js"></script> --}}
+
+<script src="/javascript/cocktail.js"></script>
 

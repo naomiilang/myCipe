@@ -22,7 +22,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
-router.get('/dash', (req, res) => {
+router.get('/home', (req, res) => {
   Recipe.findAll({
     attributes: [
       'id',

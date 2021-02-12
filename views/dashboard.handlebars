@@ -25,11 +25,13 @@
             </br>
             <div class="row justify-content-center font-monospace border border-dark"
                 style="background-color: #B0ECE3; font-size: 25px">
-                Chef {{ user.username }}
+                My Recipes
             </div>
         </div>
+    
     <div class="container justify-content-center">
         </br>
+        {{#if recipes.length}}
         {{#each recipes as |recipe|}}
         <div class="row font-monospace" style="text-align:center">
             <div class="col-sm-2" style="background-color: #B0ECE3;">
@@ -40,7 +42,14 @@
         </div>
         </br>
         {{/each}}
+        {{else}}
+        <div class="row font-monospace" style="text-align:center">
+            <div class="col-sm-12" style="background-color: #B0DDEC; font-size:medium"><a href="/create">Add Your Recipes Here</a></div>
+        </div>
+        {{/if}}
     </div>
+
+  
     
 {{!-- <script src="./javascript/add-recipe.js"></script> --}}
 

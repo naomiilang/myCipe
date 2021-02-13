@@ -18,5 +18,12 @@ module.exports = {
       }
   
       return word;
+    },
+    
+    split_string: ([str]) => {
+      let ar = str.split(',', '.');
+      return ar
     }
+
+
   };

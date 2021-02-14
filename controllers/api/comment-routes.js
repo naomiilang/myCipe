@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment, User, Favorite, Recipe } = require('../../models');
 
+// get all comments
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: [

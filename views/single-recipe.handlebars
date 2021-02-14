@@ -1,55 +1,6 @@
-
-<style>
-  body{
-        background: white;
-    }
+    <link rel="stylesheet" href="/stylesheets/single-page.css">
     
-    form {
-        display: inline-block;
-        width: 100%;
-    }
-
-    textarea, input {
-        padding: .5%;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-
-    textarea:focus, input:focus {
-        outline: none;
-        border: 1px solid #3486eb;
-    }
-
-    textarea {
-        min-width: 40%;
-        min-height: 100px;
-        }
     
-
-    form > div {
-        margin-bottom: 2%;
-        text-align: center;
-        }
-
-    form label {
-        display: block;
-        }
-
-    .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-    }
-
-    .comment:nth-child(odd) {
-    background-color: #e7fcfa;
-    }
-
-    .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-    }
-</style>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#B0DDEC; color: darkslategray;">
         {{> nav}}  
     </nav>
@@ -72,7 +23,8 @@
             </div>
             </br>
             <div class="row font-monospace" style="text-align:center">
-                <div class="col-sm-5" style="background-color: #B0ECE3;">Ingredients: <br />{{ recipe.ingredients_text }}</div>
+                {{!-- <div class="col-sm-5" style="background-color: #B0ECE3;">Ingredients: {{#each split_string recipe.ingredients_text}}<br />{{split_string recipe.ingredients_text }}{{/each}}</div> --}}
+                <div class="col-sm-5" style="background-color: #B0ECE3;">Ingredients: <br /> {{ recipe.ingredients_text }}</div>
                 <div class="col-sm-7" style="background-color: #B0DDEC; font-size:smaller">Directions: <br />{{ recipe.directions_text }}</div>
             </div>
             

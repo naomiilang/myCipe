@@ -56,14 +56,14 @@ Recipe.init(
         }
       },
       recipe_text: {
-        type: DataTypes.TEXT('tiny'),
+        type: DataTypes.TEXT,
         allowNull: true,
         validate: {
             len: [1]
         }
       },
       ingredients_text: {
-        type: DataTypes.TEXT('tiny'),
+        type: DataTypes.TEXT,
         allowNull: true,
         validate: {
             len: [1]

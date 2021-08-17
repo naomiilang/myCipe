@@ -2,6 +2,8 @@
 For this application, USERS can create an account under a CHEF NAME, CREATE RECIPES, COMMENT ON, and FAVORITE other recipes.  The technology used for this project includes; Express.js to create a RESTful API, Handlebars.js as the templating engine, MySQL & the Sequelize ORM for the database, along with HTML, CSS, Node.js and Javascript.
 <br>
 
+link to deployed application: https://mycipe.herokuapp.com/
+
 Upon installation from github run terminal commands:<br>
 
 npm install<br>
